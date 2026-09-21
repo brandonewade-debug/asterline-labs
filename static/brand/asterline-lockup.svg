@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" fill="none">
+  <defs>
+    <linearGradient id="a" x1="35" y1="270" x2="270" y2="28" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67ECFF"/>
+      <stop offset=".46" stop-color="#7BA9FF"/>
+      <stop offset="1" stop-color="#A56BFF"/>
+    </linearGradient>
+    <linearGradient id="o" x1="24" y1="215" x2="287" y2="77" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#78F4FF"/>
+      <stop offset=".5" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#B47AFF"/>
+    </linearGradient>
+    <linearGradient id="w" x1="360" y1="80" x2="920" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FBFF"/>
+      <stop offset=".52" stop-color="#B8F5FF"/>
+      <stop offset="1" stop-color="#AB8BFF"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(14 6) scale(.55)">
+    <ellipse cx="256" cy="276" rx="220" ry="76" transform="rotate(-13 256 276)" stroke="url(#o)" stroke-width="13" opacity=".25"/>
+    <path fill="url(#a)" fill-rule="evenodd" d="M256 55 442 448h-82l-40-89H192l-40 89H70L256 55Zm0 125-68 151h136L256 180Z"/>
+    <path d="M169 311h174l24 52H145l24-52Z" fill="url(#a)"/>
+    <ellipse cx="256" cy="276" rx="220" ry="76" transform="rotate(-13 256 276)" stroke="url(#o)" stroke-width="13" stroke-linecap="round" stroke-dasharray="315 1070" stroke-dashoffset="-725"/>
+    <path d="M410 78c4 28 9 34 35 43-26 8-31 15-35 43-4-28-9-35-35-43 26-9 31-15 35-43Z" fill="#fff"/>
+  </g>
+  <text x="345" y="150" fill="url(#w)" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="102" font-weight="800" letter-spacing="-4">ASTERLINE</text>
+  <text x="350" y="218" fill="#AAB4CB" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="48" font-weight="650" letter-spacing="18">LABS</text>
+</svg>

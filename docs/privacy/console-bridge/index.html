@@ -1,0 +1,133 @@
+    <!doctype html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+      <meta name="description" content="How Console Bridge handles local-network pairing, bridge data, console diagnostics, saved drafts, and optional AI services.">
+      <meta name="robots" content="index,follow">
+      <meta name="referrer" content="strict-origin-when-cross-origin">
+      <meta name="theme-color" content="#05070d">
+      <meta name="apple-mobile-web-app-title" content="Asterline Labs">
+      <title>Console Bridge Privacy Policy — Asterline Labs</title>
+      <link rel="canonical" href="https://brandonewade-debug.github.io/asterline-labs/privacy/console-bridge/">
+      <link rel="icon" href="/asterline-labs/assets/brand/asterline-mark.svg" type="image/svg+xml">
+      <link rel="manifest" href="/asterline-labs/assets/site.webmanifest">
+      <link rel="stylesheet" href="/asterline-labs/assets/styles.css">
+      <meta property="og:type" content="website">
+      <meta property="og:site_name" content="Asterline Labs">
+      <meta property="og:title" content="Console Bridge Privacy Policy — Asterline Labs">
+      <meta property="og:description" content="How Console Bridge handles local-network pairing, bridge data, console diagnostics, saved drafts, and optional AI services.">
+      <meta property="og:url" content="https://brandonewade-debug.github.io/asterline-labs/privacy/console-bridge/">
+      <meta property="og:image" content="https://brandonewade-debug.github.io/asterline-labs/assets/og/asterline-social.png">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta name="twitter:card" content="summary_large_image">
+
+      <script defer src="/asterline-labs/assets/site.js"></script>
+    </head>
+    <body>
+      <a class="skip-link" href="#main-content">Skip to content</a>
+      <header class="site-header">
+        <div class="shell header-inner">
+          <a class="brand-link" href="/asterline-labs/">
+            <img class="brand-mark" src="/asterline-labs/assets/brand/asterline-mark.svg" alt="">
+            <span class="brand-name">Asterline Labs</span>
+          </a>
+          <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation"><span></span></button>
+          <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+            <a href="/asterline-labs/#apps/">Apps</a><a href="/asterline-labs/beta/">Betas</a><a href="/asterline-labs/support/">Support</a><a href="/asterline-labs/privacy/" aria-current="page">Privacy</a><a class="nav-cta" href="/asterline-labs/beta/">Join a beta</a>
+          </nav>
+        </div>
+      </header>
+      <main id="main-content">
+
+<section class="legal-hero">
+  <div class="shell">
+    <p class="eyebrow">Legal and privacy</p>
+    <h1 class="page-title">Console Bridge Privacy Policy</h1>
+    <p class="page-lede">How Console Bridge handles local-network pairing, bridge data, console diagnostics, saved drafts, and optional AI services.</p>
+    <p class="effective">Effective September 21, 2026</p>
+  </div>
+</section>
+<div class="shell legal-wrap">
+  <nav class="legal-nav" aria-label="On this page"><strong>On this page</strong><a href="#scope">Scope and architecture</a><a href="#data">Data handled on the phone and Pi</a><a href="#ai">Optional AI processing</a><a href="#console">Console and local-network data</a><a href="#use">How information is used</a><a href="#sharing">Where data goes</a><a href="#retention">Retention and deletion</a><a href="#tracking">Tracking and analytics</a><a href="#security">Security and safety boundary</a><a href="#children">Children</a><a href="#contact">Questions and changes</a></nav>
+  <article class="legal"><section id="scope"><h2>Scope and architecture</h2>
+<p>This policy covers the Console Bridge iPhone app and the companion software installed on a user-controlled Raspberry Pi. Daily app and browser traffic is intended to remain between the device, the Pi, and the selected console on the user’s network. Asterline Labs does not operate a Console Bridge cloud account or command relay.</p>
+</section><section id="data"><h2>Data handled on the phone and Pi</h2>
+<h3>Pairing and local-network information</h3>
+<ul>
+<li>Bridge name and address, console target address, certificate identity or fingerprint, pairing or login state, and connection diagnostics.</li>
+<li>A private setup file may contain bridge pairing details, recovery-network information, and a certificate fingerprint. It must be protected and deleted from Downloads after use.</li>
+<li>On-device preferences and secure connection material needed to reconnect to the selected bridge.</li>
+</ul>
+<h3>Information stored on the Pi</h3>
+<ul>
+<li>Bridge login records, network settings, Wi-Fi profile information, console configuration, and local TLS material.</li>
+<li>Saved chats, requests, AI drafts, macros, Lua drafts, a local library, confirmed console memory, and bounded diagnostic or audit records.</li>
+<li>Optional OpenAI API configuration or a separate ChatGPT/Codex sign-in maintained by the isolated AI component on the Pi.</li>
+</ul>
+<p>Bridge passwords are designed to be stored as salted hashes. Wi-Fi passwords and optional provider credentials require protected local files. Operators remain responsible for securing the Pi, storage card, network, backups, and paired devices.</p>
+</section><section id="ai"><h2>Optional AI processing</h2>
+<p>AI drafting is optional. When enabled, the Pi sends the user’s request, a bounded window of recent conversation messages, confirmed console memory, product instructions, and a limited diagnostic snapshot to the selected OpenAI service. The snapshot is designed to exclude credentials, raw OSC traffic, full fixture lists, and unrelated show data, but users should still avoid placing secrets in prompts or notes.</p>
+<p>OpenAI processes the request under the account, plan, API terms, and privacy choices used by the operator. A requested provider setting such as <code>store:false</code> is not a guarantee of zero provider retention. ChatGPT or API credentials are not sent to Asterline Labs.</p>
+</section><section id="console"><h2>Console and local-network data</h2>
+<p>The Pi can exchange bounded OSC, SFTP, HTTPS, discovery, or diagnostic traffic with the console and paired devices when a feature is deliberately used. Saved diagnostics can include configuration state, recent accepted feedback age, reachability results, and selected plugin error messages. Console feedback is not automatically treated as proof that an action executed successfully.</p>
+</section><section id="use"><h2>How information is used</h2>
+<p>Information is used to authenticate paired devices, maintain the requested network connection, draft and save reviewable content, perform a user-approved transfer or command workflow, diagnose connectivity, and preserve a local audit trail. Asterline Labs does not receive it for advertising, behavioral profiling, sale, or cross-app tracking.</p>
+</section><section id="sharing"><h2>Where data goes</h2>
+<ul>
+<li><strong>Your equipment:</strong> The iPhone, Pi, and grandMA3 console communicate on networks you control.</li>
+<li><strong>OpenAI, when enabled:</strong> Drafting requests go from the Pi to the selected OpenAI connection.</li>
+<li><strong>Apple:</strong> TestFlight and App Store distribution are handled by Apple.</li>
+<li><strong>No Asterline command cloud:</strong> Current product traffic is not routed through an Asterline-operated console or media backend.</li>
+</ul>
+</section><section id="retention"><h2>Retention and deletion</h2>
+<p>Phone data remains in the app container or secure storage until it is removed, replaced, or the app is deleted. Pi data remains until the operator deletes chats, memory, drafts, logs, credentials, or configuration; removes the application data; or reimages the device. Sign-out from OpenAI does not automatically erase local Console Bridge chats. Deleting local chats does not necessarily delete provider-side records governed by OpenAI’s terms.</p>
+<p>Console Bridge does not create an Asterline account, so there is no Asterline account to delete. The operator controls the Pi and is responsible for deletion from backups and additional paired devices.</p>
+</section><section id="tracking"><h2>Tracking and analytics</h2>
+<p>Console Bridge is not designed to include Asterline advertising, behavioral analytics, or cross-app tracking. Operating-system, Apple, OpenAI, router, console, or network logs remain subject to those systems’ practices.</p>
+</section><section id="security"><h2>Security and safety boundary</h2>
+<p>The design uses local authentication, protected credentials, device-pinned HTTPS, isolated AI processing, expiring review plans, and explicit approval gates where implemented. These measures reduce risk but do not make a network or live show fail-safe. Use a dedicated trusted network, change default credentials, protect the setup file, verify certificates, keep backups, and qualify every supported console/software version before production use.</p>
+</section><section id="children"><h2>Children</h2>
+<p>Console Bridge is a professional technical tool and is not directed to children under 13. Asterline Labs does not knowingly collect children’s personal information through a Console Bridge service.</p>
+</section><section id="contact"><h2>Questions and changes</h2>
+<p>Material changes will be posted here with a revised effective date. For a privacy or security report, use the <a href="../../support/">support page</a>. Do not attach setup files, credentials, API keys, private IP plans, or show files unless a secure exchange has been arranged.</p>
+</section></article>
+</div>
+
+      </main>
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <a class="brand-link" href="/asterline-labs/">
+        <img class="brand-mark" src="/asterline-labs/assets/brand/asterline-mark.svg" alt="">
+        <span class="brand-name">Asterline Labs</span>
+      </a>
+      <p>Independent software for media, live production, and the systems around them.</p>
+    </div>
+    <div class="footer-col">
+      <h2>Products</h2>
+      <a href="/asterline-labs/apps/orbit/">Orbit</a><a href="/asterline-labs/apps/nova-stream/">Nova Stream</a><a href="/asterline-labs/apps/console-bridge/">Console Bridge</a><a href="/asterline-labs/apps/cueforge/">CueForge</a><a href="/asterline-labs/apps/dockeros/">DockerOS</a>
+    </div>
+    <div class="footer-col">
+      <h2>Resources</h2>
+      <a href="/asterline-labs/beta/">Public betas</a>
+      <a href="/asterline-labs/support/">Support</a>
+      <a href="/asterline-labs/privacy/">Privacy center</a>
+      <a href="/asterline-labs/terms/">Terms</a>
+    </div>
+    <div class="footer-col">
+      <h2>Elsewhere</h2>
+      <a href="https://github.com/brandonewade-debug" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:brandonewade+asterline@gmail.com?subject=Asterline+Labs+inquiry&body=">Email</a>
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <p>© <span data-year>2026</span> Asterline Labs. Built by Brandon Wade.</p>
+    <p>Apple, TestFlight, Plex, Google, YouTube, OpenAI, grandMA3, ONYX, Docker, Debian, and other names are marks of their respective owners. Asterline Labs is independent and is not endorsed by them.</p>
+  </div>
+</footer>
+
+    </body>
+    </html>

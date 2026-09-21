@@ -1,0 +1,16 @@
+{
+  "name": "Asterline Labs",
+  "short_name": "Asterline",
+  "start_url": "/asterline-labs/",
+  "display": "standalone",
+  "background_color": "#05070d",
+  "theme_color": "#05070d",
+  "icons": [
+    {
+      "src": "/asterline-labs/assets/brand/asterline-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
