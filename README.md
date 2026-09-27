@@ -13,6 +13,7 @@ After GitHub Pages deployment:
 
 ## Products shown
 
+- AsterOS — private TestFlight beta; external review in preparation
 - Orbit — external TestFlight beta
 - Nova Stream — external TestFlight beta
 - Console Bridge — private beta
@@ -67,3 +68,5 @@ The policies describe the repositories as inspected on September 21, 2026. They 
 ## Ownership
 
 Copyright © 2026 Asterline Labs / Brandon Wade. All rights reserved. No open-source license is granted by this repository unless a file explicitly says otherwise.
+
+AsterOS product and privacy pages were added September 27, 2026. Its policy has its own effective date and describes direct server/SMB access, photo metadata and receipts, Tailscale, Keychain, optional Desktop Commander, and Apple beta diagnostics.

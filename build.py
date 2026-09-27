@@ -280,7 +280,7 @@ def home_page() -> str:
     <div class="section-head">
       <div class="section-head-copy">
         <p class="eyebrow">The portfolio</p>
-        <h2 class="section-title">One studio. Five distinct tools.</h2>
+        <h2 class="section-title">One studio. Six distinct tools.</h2>
         <p class="section-lede">Each product gets its own purpose, platform, privacy policy, support path, and honest status.</p>
       </div>
     </div>
@@ -323,6 +323,8 @@ def app_page(app: dict) -> None:
     beta_heading = "Join the external beta" if app["testflight"] else ("Private testing" if app["slug"] == "console-bridge" else "Development status")
     if app["testflight"]:
         beta_copy = "The public invitation opens in Apple’s TestFlight service. Availability depends on Apple processing, the active build, compatible devices, and remaining tester capacity."
+    elif app["slug"] == "asteros":
+        beta_copy = "AsterOS is installed through private TestFlight testing. External review is being prepared. Contact us about future access; there is no public invitation link yet."
     elif app["slug"] == "console-bridge":
         beta_copy = "Console Bridge is not using a public invitation link. Access is granted deliberately so hardware, software version, network setup, and safety expectations can be reviewed first."
     else:
@@ -503,7 +505,7 @@ def privacy_index() -> None:
     write("privacy/index.html", page("Privacy Center", "Privacy policies for the Asterline Labs website and each product.", body, "privacy", active="privacy"))
 
 
-def legal_page(title: str, summary: str, sections: list, path: str, active: str = "privacy") -> None:
+def legal_page(title: str, summary: str, sections: list, path: str, active: str = "privacy", effective_date: str = EFFECTIVE_DATE) -> None:
     nav = "".join(f'<a href="#{section_id}">{html.escape(heading)}</a>' for section_id, heading, _ in sections)
     article = "".join(f'<section id="{section_id}"><h2>{html.escape(heading)}</h2>{content}</section>' for section_id, heading, content in sections)
     body = f'''
@@ -512,7 +514,7 @@ def legal_page(title: str, summary: str, sections: list, path: str, active: str 
     <p class="eyebrow">Legal and privacy</p>
     <h1 class="page-title">{html.escape(title)}</h1>
     <p class="page-lede">{html.escape(summary)}</p>
-    <p class="effective">Effective {EFFECTIVE_DATE}</p>
+    <p class="effective">Effective {effective_date}</p>
   </div>
 </section>
 <div class="shell legal-wrap">
@@ -525,7 +527,7 @@ def legal_page(title: str, summary: str, sections: list, path: str, active: str 
 
 def generate_legal_pages() -> None:
     for slug, policy in PRIVACY_POLICIES.items():
-        legal_page(policy["title"], policy["summary"], policy["sections"], f"privacy/{slug}")
+        legal_page(policy["title"], policy["summary"], policy["sections"], f"privacy/{slug}", effective_date=policy.get("effective_date", EFFECTIVE_DATE))
     legal_page("Terms of Use", "Terms for the Asterline Labs website, TestFlight builds, private betas, and development prototypes.", TERMS_SECTIONS, "terms")
 
 
@@ -549,6 +551,7 @@ def copy_assets() -> None:
     if (STATIC / "og").exists():
         shutil.copytree(STATIC / "og", target / "og", dirs_exist_ok=True)
     icon_sources = {
+        "asteros.png": STATIC / "apps/asteros.png",
         "orbit.png": STATIC / "apps/orbit.png",
         "nova-stream.png": STATIC / "apps/nova-stream.png",
         "console-bridge.png": STATIC / "apps/console-bridge.png",

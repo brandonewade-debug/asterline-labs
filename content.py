@@ -410,3 +410,74 @@ TERMS_SECTIONS = [
 <p>These terms may be updated as products and distribution change. The effective date identifies the current version. Material changes will be posted on this site. Questions can be sent through the <a href="../support/">support page</a>.</p>
 '''),
 ]
+
+# AsterOS: current private TestFlight beta, September 27, 2026.
+APPS.append({
+    "slug": "asteros", "name": "AsterOS", "store_name": "AsterOS",
+    "tagline": "Your server. Within reach.",
+    "summary": "A native Unraid companion for server monitoring, Docker apps, files, and photo backups.",
+    "description": "Keep your own server close with a rounded, glass-inspired interface for iPhone and iPad. Explore an offline demo before connecting.",
+    "platforms": ["iPhone", "iPad", "Unraid"],
+    "status": "Private TestFlight beta", "status_class": "private", "accent": "mint",
+    "icon": "asteros.png", "testflight": None, "privacy": "privacy/asteros/",
+    "features": [
+        ("Know your server", "See CPU, memory, network, storage and supported GPU statistics. Hardware and server plugins determine available readings."),
+        ("Make apps your own", "Arrange Docker apps in folders, choose custom icons, browse Community Applications, and review basic or advanced container settings."),
+        ("Keep files and memories close", "Browse your network shares and explicitly back up photos, videos and Live Photos to a chosen folder, with year/month organization and resumable progress.")
+    ],
+    "connections": "Your Unraid server over HTTPS, SMB shares using your share account, and optional app-scoped Tailscale connectivity. The current direct connection workflow does not require an AsterOS Docker companion.",
+    "beta_note": "AsterOS is in private TestFlight testing. External beta review is being prepared; no public invitation is available yet. Photo backup currently runs in the foreground after you start it. Use disposable files and containers for beta testing.",
+    "disclaimer": "AsterOS is independent and is not affiliated with or endorsed by Unraid, Tailscale, Docker, Desktop Commander or Apple. Container software and Desktop Commander run on your server, not on iOS."
+})
+
+PRIVACY_POLICIES["asteros"] = {
+    "title": "AsterOS Privacy Policy",
+    "effective_date": "September 27, 2026",
+    "summary": "How AsterOS handles server access, network shares, photo backups, private connectivity and support information.",
+    "sections": [
+        ("scope", "Scope and developer role", """
+<p>This policy covers AsterOS for iPhone and iPad, developed by Brandon Wade under Asterline Labs. AsterOS connects to servers and services you choose. It does not require an Asterline account, and Asterline Labs does not operate a backend that receives or relays your server files, photo backups or server credentials.</p>
+<p>The app processes data on your device and through your configured services. This is distinct from information you deliberately send to Asterline Labs through support or Apple's beta feedback tools.</p>
+"""),
+        ("local", "Information stored on your device", """
+<ul>
+<li>Saved server names and addresses, app shortcuts, app order and folders, selected icons, display preferences and backup destination settings.</li>
+<li>Server API credentials, share credentials and remembered server session cookies, stored using the device Keychain.</li>
+<li>Local caches, selected file or photo resources needed for a transfer, backup progress information and technical state used to explain connection failures.</li>
+<li>Optional Tailscale device identity and connection state in the app's protected storage.</li>
+<li>App-lock settings and PIN verification material when enabled. Face ID and Touch ID authentication are handled by Apple's system APIs; AsterOS does not receive your face or fingerprint data.</li>
+</ul>
+<p>The offline demo uses fictional data and in-memory changes. It does not read your photo library, connect to your server or perform actual container installations.</p>
+"""),
+        ("servers", "Your server, files and apps", """
+<p>API requests, monitoring data, container configuration and terminal traffic pass between your device and the server you configure. File browsing and backups use the share account and destination you select. Your server, reverse proxy and installed applications may keep their own access or activity logs.</p>
+<p>App icons, catalog information and websites can be supplied by your server or by third-party hosts. Opening an app website or fetching its icon can send normal request information, such as your IP address, to that host. Website sessions may use cookies in their browser storage.</p>
+<p>Optional Desktop Commander pairing and remote access involve the Desktop Commander service and any client you authorize. The integration runs on your server. Review its access and privacy practices before enabling it.</p>
+"""),
+        ("photos", "Photos, videos and backups", """
+<p>When you enable a real backup, AsterOS requests photo-library access through iOS. Depending on your permission, it can read authorized photos, videos, Live Photo resources and associated metadata needed to identify, organize and upload originals. Originals may contain capture dates, location metadata and other information already present in the file.</p>
+<p>After you explicitly start a backup, files are sent to your chosen server folder. They are not uploaded to Asterline Labs. Backup receipts and destination state help avoid repeating verified uploads. Photo resources stored in iCloud may be retrieved through Apple's Photos services when needed and permitted. The current backup workflow runs in the foreground.</p>
+<p>You control Photos access in iOS Settings. Removing access does not delete originals already backed up to your server. Manage those files and backup receipts on your server.</p>
+"""),
+        ("tailscale", "Optional Tailscale connectivity", """
+<p>If you choose private connectivity, the embedded Tailscale component connects to your Tailscale account and tailnet. Tailscale may process account and device information, public keys, network addresses and connection metadata to authenticate and coordinate connections. Connections may use Tailscale relay infrastructure when necessary.</p>
+<p>This connection is scoped to the app's private-server traffic rather than a system-wide VPN. Tailscale and your chosen identity provider apply their own practices. See <a href="https://tailscale.com/legal/privacy-policy" rel="noopener noreferrer">Tailscale's Privacy Policy</a>. Signing out in AsterOS and removing the device in your Tailscale administration controls are separate from removing an Unraid server profile.</p>
+"""),
+        ("support", "Support and Apple diagnostics", """
+<p>If you contact support, Asterline Labs receives your email address and the message, attachments or reports you choose to send. We use these to answer questions, investigate defects and improve the app. Review reports before sharing and do not include passwords, API keys, private server URLs or sensitive photos.</p>
+<p>Apple handles App Store and TestFlight distribution. TestFlight can provide the developer with crash reports, usage information and feedback, including submitted screenshots. See <a href="https://www.apple.com/legal/privacy/data/en/test-flight/" rel="noopener noreferrer">TestFlight and Privacy</a>. AsterOS does not add an advertising SDK or a behavioral analytics account.</p>
+"""),
+        ("retention", "Retention and your controls", """
+<p>Local preferences and caches remain until removed through available app controls, replaced or cleared, or the app is deleted. Keychain records and system backups can persist according to platform behavior and your Apple settings. Remove saved connections and revoke server-issued credentials when you no longer want access. Removing a server profile does not revoke its API key on the server.</p>
+<p>Backups and other files on your server remain until you delete them there; deleting AsterOS does not delete server files or containers. Manage third-party accounts, sessions and devices with those providers. AsterOS does not create an Asterline account requiring deletion.</p>
+<p>Support correspondence is retained as reasonably needed to resolve your request and maintain necessary security or business records. You may request access, correction or deletion of information you sent us, subject to information we must retain. Requests to external providers must be directed to them.</p>
+"""),
+        ("choices", "Choices and security", """
+<p>You can use the demo without a server account, choose whether to enable Tailscale, limit photo access and enable an optional app lock. Server access should use only accounts and permissions you need. Asterline Labs does not sell personal information or use it for cross-app advertising. External services have their own logging, retention and privacy practices.</p>
+<p>No software or network can guarantee complete security. Keep your device and server updated, protect credentials, and review sensitive actions before confirming them.</p>
+"""),
+        ("contact", "Contact and changes", """
+<p>For AsterOS support or privacy questions, email <a href="mailto:brandonewade+asterline@gmail.com">brandonewade+asterline@gmail.com</a> or visit the <a href="../../support/">support page</a>. Include AsterOS in the subject. This policy will be updated as the app's data handling changes, with a revised effective date.</p>
+""")
+    ]
+}
